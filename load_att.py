@@ -21,8 +21,16 @@ engine = sqlalchemy.create_engine('mysql+mysqldb://root:Rajbhatta1!#$@localhost/
 #print(pd.read_sql(q2,engine))
 q3 = "SHOW COLUMNS FROM Dress_data"
 
-df = pd.read_sql(q3,engine)
-print(df)
+show_columns = pd.read_sql(q3,engine)
+df = pd.DataFrame(data=show_columns,)
+a = df.columns
+df = pd.read_excel(r'C:\Users\Samsung\Downloads\data fsds -20220812T084946Z-001\data fsds_\Dress Sales.xlsx')
+for i in df.columns:
+    print(i)
+
+print(type(i))
+
+
 
 
 
